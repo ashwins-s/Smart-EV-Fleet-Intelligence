@@ -3,6 +3,7 @@ from sqlalchemy import text
 
 from app.database import engine
 from app.routers import vehicle
+from app.routers import telemetry
 
 app = FastAPI(
     title="Smart EV Fleet Intelligence API",
@@ -11,6 +12,7 @@ app = FastAPI(
 )
 
 app.include_router(vehicle.router)
+app.include_router(telemetry.router)
 
 
 @app.get("/")
